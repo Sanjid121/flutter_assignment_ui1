@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment_ui/page5.dart';
 import 'package:flutter_assignment_ui/page_3.dart';
+import 'package:flutter_assignment_ui/widget.dart';
 
 class Page4 extends StatefulWidget {
   const Page4({Key? key}) : super(key: key);
@@ -51,25 +52,12 @@ class _Page4State extends State<Page4> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Sign Up',
-                        style: TextStyle(
-                            fontFamily: 'Urbanist',
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
-                            color: Color(0xFFF1D1E25)),
-                      ),
+                      text('Sign Up', 24, FontWeight.w700, 0xFFF1D1E25),
                       SizedBox(
                         height: 7,
                       ),
-                      Text(
-                        'Create account and enjoy all services',
-                        style: TextStyle(
-                            fontFamily: 'Urbanist',
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFFF808D9E)),
-                      )
+                      text('Create account and enjoy all services', 16,
+                          FontWeight.w400, 0xFFF808D9E),
                     ],
                   ),
                 ),
@@ -80,39 +68,7 @@ class _Page4State extends State<Page4> {
               Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Container(
-                  width: 345,
-                  height: 48,
-                  child: ElevatedButton.icon(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFFFFFFFF),
-                        shape: RoundedRectangleBorder(
-                          side:
-                              BorderSide(color: Color(0xFFFE9ECF2), width: 0.5),
-                          borderRadius: BorderRadius.circular(3),
-                        )),
-                    label: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Text(
-                        'Sign in with Google',
-                        style: TextStyle(
-                            fontFamily: 'Urbanist',
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFFF2B3453)),
-                      ),
-                    ),
-                    icon: Row(
-                      children: [
-                        Image.asset(
-                          'assets/sanjid3.png',
-                          height: 24,
-                          width: 24,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                    width: 345, height: 48, child: custom_elebatbutton()),
               ),
               SizedBox(
                 height: 25,
@@ -122,35 +78,17 @@ class _Page4State extends State<Page4> {
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 25),
-                      child: Container(
-                        width: 140,
-                        child: Divider(
-                          height: 1,
-                        ),
-                      ),
-                    ),
+                        padding: const EdgeInsets.only(left: 25),
+                        child: custom_devidar()),
                     SizedBox(
                       width: 10,
                     ),
                     Container(
-                      child: Text(
-                        'OR',
-                        style: TextStyle(
-                            fontFamily: 'Urbanist',
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            color: Color(0xFFF808D9E)),
-                      ),
+                      child: text('OR', 16, FontWeight.w700, 0xFFF808D9E),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 5, left: 11),
-                      child: Container(
-                        width: 140,
-                        child: Divider(
-                          height: 1,
-                        ),
-                      ),
+                      child: custom_devidar(),
                     ),
                   ],
                 ),
@@ -161,26 +99,7 @@ class _Page4State extends State<Page4> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
                 child: Container(
-                  child: Form(
-                      child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFFE9ECF2))),
-                      prefixIcon: SizedBox(
-                          width: 20,
-                          child: Icon(
-                            Icons.person,
-                            size: 20,
-                          )),
-                      labelText: 'Type your username',
-                      labelStyle: TextStyle(
-                        fontFamily: 'Urbanist',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFFF7E8CA0),
-                      ),
-                    ),
-                  )),
+                  child: custom_text_from('Type your username', Icons.person),
                 ),
               ),
               SizedBox(
@@ -189,26 +108,8 @@ class _Page4State extends State<Page4> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
                 child: Container(
-                  child: Form(
-                      child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFFE9ECF2))),
-                      prefixIcon: SizedBox(
-                          width: 20,
-                          child: Icon(
-                            Icons.email_outlined,
-                            size: 20,
-                          )),
-                      labelText: 'Type your emai',
-                      labelStyle: TextStyle(
-                        fontFamily: 'Urbanist',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFFF7E8CA0),
-                      ),
-                    ),
-                  )),
+                  child:
+                      custom_text_from('Type your email', Icons.email_outlined),
                 ),
               ),
               SizedBox(
@@ -217,23 +118,9 @@ class _Page4State extends State<Page4> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
                 child: Container(
-                  child: Form(
-                      child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFFE9ECF2))),
-                      suffixIcon: Icon(Icons.visibility_off),
-                      prefixIcon: Icon(Icons.lock_outline_rounded),
-                      labelText: 'Type your password',
-                      labelStyle: TextStyle(
-                        fontFamily: 'Urbanist',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFFF7E8CA0),
-                      ),
-                    ),
-                  )),
-                ),
+                    child: custom_text_from(
+                        'Type your password', Icons.lock_outline_rounded,
+                        sd: Icon(Icons.visibility_off))),
               ),
               SizedBox(
                 height: 10,
@@ -246,48 +133,21 @@ class _Page4State extends State<Page4> {
                       child: Checkbox(value: false, onChanged: (value) {}),
                     ),
                   ),
-                  Text(
-                    'I agree to the company',
-                    style: TextStyle(
-                        fontFamily: 'Urbanist',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFFF808D9E)),
-                  ),
+                  text('I agree to the company', 14, FontWeight.w400,
+                      0xFFF808D9E),
                   SizedBox(
                     width: 3,
                   ),
-                  Text(
-                    'Term of Service',
-                    style: TextStyle(
-                      fontFamily: 'Urbanist',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
+                  text('Term of Service', 14, FontWeight.w700, 0xFFF1D1E25),
                   SizedBox(
                     width: 3,
                   ),
-                  Text(
-                    'and',
-                    style: TextStyle(
-                        fontFamily: 'Urbanist',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFFF808D9E)),
-                  ),
+                  text('and', 14, FontWeight.w400, 0xFFF808D9E),
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 56),
-                child: Text(
-                  'Privacy Policy',
-                  style: TextStyle(
-                    fontFamily: 'Urbanist',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
+                child: text('Privacy Policy', 14, FontWeight.w700, 0xFFF1D1E25),
               ),
               SizedBox(
                 height: 50,
@@ -298,27 +158,11 @@ class _Page4State extends State<Page4> {
                   width: 358,
                   height: 48,
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                    child: ElevatedButton(
-                        onPressed: () {
-                                    Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => Page5()));
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFFF0062FF),
-                            elevation: 2,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            )),
-                        child: Text(
-                          'Sign Up',
-                          style: TextStyle(
-                              fontFamily: 'Urbanist',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xFFFFFFFFF)),
-                        )),
-                  ),
+                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                      child: custom_ElevatedButton(() {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => Page5()));
+                      }, 'Sign Up')),
                 ),
               ),
               SizedBox(
@@ -329,26 +173,11 @@ class _Page4State extends State<Page4> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      'Have an account?',
-                      style: TextStyle(
-                          fontFamily: 'Urbanist',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xFFF7E8CA0)),
-                    ),
+                    text('Have an account?', 14, FontWeight.w700, 0xFFF808D9E),
                     InkWell(
-                        onTap: () {
-                 
-                        },
-                        child: Text(
-                          'Sign In',
-                          style: TextStyle(
-                              fontFamily: 'Urbanist',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xFFF0062FF)),
-                        )),
+                      onTap: () {},
+                      child: text('Sign In', 14, FontWeight.w700, 0xFFF0062FF),
+                    ),
                   ],
                 ),
               ),

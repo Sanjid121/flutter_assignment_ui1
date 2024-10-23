@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment_ui/page_2.dart';
+import 'package:flutter_assignment_ui/widget.dart';
 
 class Page1 extends StatefulWidget {
   const Page1({Key? key}) : super(key: key);
@@ -31,60 +32,25 @@ class _PageState extends State<Page1> {
             Center(
               child: Column(
                 children: [
-                  Text(
-                    'Easy Way to Get',
-                    style: TextStyle(
-                        fontFamily: 'Urbanist',
-                        fontSize: 32,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xFFF242B42)),
-                  ),
-                  Text(
-                    'Better Life',
-                    style: TextStyle(
-                      fontFamily: 'Urbanist',
-                      fontSize: 32,
-                      fontWeight: FontWeight.w700,
-                      color: Color(0xFFF242B42),
-                    ),
-                  ),
+                  text(
+                          'Easy Way to Get', 32, FontWeight.w700, 0xFFF242B42),
+                      
                   SizedBox(
                     height: 20,
                   ),
                   Container(
                     child: Column(
                       children: [
-                        Text(
-                          'Amet minim mollit non deserunt',
-                          style: TextStyle(
-                            fontFamily: 'Urbanist',
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFFF7E8CA0),
-                          ),
-                        ),
-                        Text(
-                          'ullamco est sit aliqua dolor do amet',
-                          style: TextStyle(
-                            fontFamily: 'Urbanist',
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFFF7E8CA0),
-                          ),
-                        ),
-                        Text(
-                          'sint. Velit officia consequat.',
-                          style: TextStyle(
-                            fontFamily: 'Urbanist',
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFFF7E8CA0),
-                          ),
-                        ),
+                          text(
+                          'Amet minim mollit non deserunt', 16, FontWeight.w400, 0xFFF7E8CA0),
+                        text(
+                          'ullamco est sit aliqua dolor do amet', 16, FontWeight.w400, 0xFFF7E8CA0),
+                      text(
+                          'sint. Velit officia consequat.', 16, FontWeight.w400, 0xFFF7E8CA0),
                         SizedBox(
                           height: 15,
                         ),
-                        //arow icon
+              
                         InkWell(
                           onTap: () {
                             Navigator.push(context,

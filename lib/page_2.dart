@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment_ui/widget.dart';
 import './page_3.dart';
 
 class Page2 extends StatefulWidget {
@@ -11,94 +12,66 @@ class Page2 extends StatefulWidget {
 class _Page2State extends State<Page2> {
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          children: [
-            Image.asset('assets/sanjid2.png'),
-            SizedBox(
-              height: 15,
-            ),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Container(
-                  child: Text(
-                    'Plan Your Task Easily and Task Your Plan Instantly',
-                    style: TextStyle(
-                        fontFamily: 'Urbanist',
-                        fontSize: 32,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xFFF242B42)),
+      body: SingleChildScrollView(
+        child: Container(
+          height: h,
+          width: w,
+          child: Column(
+            children: [
+              Container(
+                  height: h / 1.7, child: Image.asset('assets/sanjid2.png')),
+              SizedBox(
+                height: 15,
+              ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Container(
+                    child: text(
+                        'Plan Your Task Easily and Task Your Plan Instantly',
+                        32,
+                        FontWeight.w700,
+                        0xFFF242B42),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              width: 358,
-              height: 48,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: ElevatedButton(
-                    onPressed: () {
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: 358,
+                height: 48,
+                child: Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: custom_ElevatedButton(() {
                       Navigator.push(
                           context, MaterialPageRoute(builder: (_) => Page3()));
-                    },
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFF0062FF),
-                        elevation: 2,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        )),
-                    child: Text(
-                      'Get Started',
-                      style: TextStyle(
-                          fontFamily: 'Urbanist',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xFFFFFFFFF)),
-                    )),
+                    }, 'Get Started')),
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Have an account?',
-                    style: TextStyle(
-                        fontFamily: 'Urbanist',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFFF7E8CA0)),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                          fontFamily: 'Urbanist',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xFFF0062FF)),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    text('Have an account?', 14, FontWeight.w700, 0xFFF808D9E),
+                    SizedBox(
+                      width: 5,
                     ),
-                  )
-                ],
-              ),
-            )
-          ],
+                    InkWell(
+                      onTap: () {},
+                      child: text('Login', 14, FontWeight.w700, 0xFFF0062FF),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
