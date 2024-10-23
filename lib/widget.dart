@@ -78,16 +78,19 @@ Widget custom_elebatbutton() {
   );
 }
 
-Widget custom_text_from(
-  String id,
-  IconData ic,
-  {Widget? sd}
-) {
+Widget custom_text_from(String id, IconData ic,
+    {Widget? sd, TextEditingController? ctr, Function? oneChangefn}) {
   return TextField(
+    controller: ctr,
+    onChanged: (value) {
+       if(oneChangefn != null){
+        oneChangefn(value);
+       };
+    },
     decoration: InputDecoration(
       enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: Color(0xFFFE9ECF2))),
-          suffixIcon:sd ,
+      suffixIcon: sd,
       prefixIcon: SizedBox(
           width: 20,
           child: Icon(
@@ -112,7 +115,6 @@ Widget custom_devidar() {
     child: Divider(),
   );
 }
-
 
 Widget custom_ElevatedButton(
   Function on,
