@@ -16,7 +16,7 @@ class _Page4State extends State<Page4> {
   final RegExp regexnumber = RegExp(r'(?=.*[1-9])');
   final RegExp regexUpercaser = RegExp(r'(?=.*[A-Z])');
   final RegExp regexLowercase = RegExp(r'(?=.*[a-z])');
-
+// validation function add
   void _validateInput(String value) {
     setState(() {
       if (passText.length >= 8) {
@@ -42,16 +42,17 @@ class _Page4State extends State<Page4> {
     });
   }
 
+  // Variable add
+
   TextEditingController passCtr = TextEditingController();
   String passText = "";
-
   bool numbrtCheck = false;
   bool upperCaseCheck = false;
   bool lowerCaseCheck = false;
   bool langthCheck = false;
-
   bool tramsContitionCheck = false;
 
+// show status add
   Widget StatusWidget(String msg, {bool? isok = false}) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -190,6 +191,7 @@ class _Page4State extends State<Page4> {
               SizedBox(
                 height: 10,
               ),
+              // include status widget
               if (passText.length > 1)
                 (langthCheck && numbrtCheck && upperCaseCheck && lowerCaseCheck)
                     ? StatusWidget("Cool! You have very strong password",
@@ -213,7 +215,8 @@ class _Page4State extends State<Page4> {
                     padding: const EdgeInsets.only(left: 22),
                     child: Container(
                       child: Checkbox(
-                        activeColor:  tramsContitionCheck ? Colors.green : Colors.grey,
+                          activeColor:
+                              tramsContitionCheck ? Colors.green : Colors.grey,
                           value: tramsContitionCheck,
                           onChanged: (value) {
                             setState(() {
