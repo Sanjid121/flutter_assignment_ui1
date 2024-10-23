@@ -380,11 +380,28 @@ class _Page5State extends State<Page5> {
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 21),
+                  child: text('Today Task', 20, FontWeight.w700, 0xFFF242B42),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: text('View All', 14, FontWeight.w700, 0xFFF0062FF),
+                )
+              ],
+            ),
+            
           ]),
     ));
   }
