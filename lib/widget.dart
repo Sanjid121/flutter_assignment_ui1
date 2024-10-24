@@ -78,14 +78,21 @@ Widget custom_elebatbutton() {
   );
 }
 
-Widget custom_text_from(String id, IconData ic,
-    {Widget? sd, TextEditingController? ctr, Function? oneChangefn}) {
+Widget custom_text_from(
+  String id,
+  IconData ic, {
+  Widget? sd,
+  TextEditingController? ctr,
+  Function? oneChangefn,
+  bool hide_text = true,
+}) {
   return TextField(
     controller: ctr,
     onChanged: (value) {
-       if(oneChangefn != null){
+      if (oneChangefn != null) {
         oneChangefn(value);
-       };
+      }
+      ;
     },
     decoration: InputDecoration(
       enabledBorder: UnderlineInputBorder(
@@ -105,6 +112,7 @@ Widget custom_text_from(String id, IconData ic,
         color: Color(0xFFF7E8CA0),
       ),
     ),
+    obscureText: hide_text,
   );
 }
 
@@ -138,4 +146,72 @@ Widget custom_ElevatedButton(
             fontWeight: FontWeight.w700,
             color: Color(0xFFFFFFFF)),
       ));
+}
+
+Widget custombox(
+
+  String? sds,
+  int ?col,
+) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Container(
+        height: 86,
+        width: 350,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Color(0xFFFE6E9ED), width: 1),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              color: Color(col!),
+              width: 2,
+              height: 54,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, left: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    sds!,
+                    style: TextStyle(
+                      fontFamily: 'Urbanist',
+                      fontSize: 16,
+                      color: Color(0xFFF242B42),
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 5.0),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.calendar_today,
+                        size: 16,
+                        color: Color(0xFFF7E8CA0),
+                      ),
+                      Text(
+                        ' 18 May, 2022',
+                        style: TextStyle(
+                          fontFamily: 'Urbanist',
+                          fontSize: 12,
+                          color: Color(0xFFF808D9E),
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Spacer(),
+            Icon(Icons.flag, color: Colors.red),
+          ],
+        ),
+      ),
+    ],
+  );
 }

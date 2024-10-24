@@ -181,12 +181,12 @@ class _Page4State extends State<Page4> {
                 child: Container(
                     child: custom_text_from(
                         'Type your password', Icons.lock_outline_rounded,
-                        ctr: passCtr, oneChangefn: (value) {
+                        ctr: passCtr,  oneChangefn: (value){
                   _validateInput(value);
                   setState(() {
                     passText = value;
                   });
-                }, sd: Icon(Icons.visibility_off))),
+                }, sd: Icon(Icons.visibility_off),)),
               ),
               SizedBox(
                 height: 10,
