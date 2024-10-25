@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons:
   flutter_native_splash: ^2.4.1
   percent_indicator: 
+  pinput:  
   # google_fonts: 
   
 # 
