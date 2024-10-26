@@ -149,9 +149,8 @@ Widget custom_ElevatedButton(
 }
 
 Widget custombox(
-
   String? sds,
-  int ?col,
+  int? col,
 ) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -214,4 +213,15 @@ Widget custombox(
       ),
     ],
   );
+}
+
+Widget custom_backbutton() {
+  return Container(
+      height: 24,
+      width: 24,
+      child: Image.network(
+        'https://cdn-icons-png.flaticon.com/128/2722/2722991.png',
+        height: 24,
+        fit: BoxFit.cover,
+      ));
 }

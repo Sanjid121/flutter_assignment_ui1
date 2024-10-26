@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment_ui/page5.dart';
-import 'package:flutter_assignment_ui/page_3.dart';
+import 'package:flutter_assignment_ui/Home_v2.dart';
+import 'package:flutter_assignment_ui/Sign_In.dart';
+import 'package:flutter_assignment_ui/Sign_Up-Verify%20Code_Email.dart';
 import 'package:flutter_assignment_ui/widget.dart';
 
 class Page4 extends StatefulWidget {
@@ -91,14 +92,7 @@ class _Page4State extends State<Page4> {
                     Navigator.push(
                         context, MaterialPageRoute(builder: (_) => Page3()));
                   },
-                  child: Container(
-                      height: 24,
-                      width: 24,
-                      child: Image.network(
-                        'https://cdn-icons-png.flaticon.com/128/2722/2722991.png',
-                        height: 24,
-                        fit: BoxFit.cover,
-                      )),
+                  child: custom_backbutton(),
                 ),
               ),
               SizedBox(
@@ -253,7 +247,7 @@ class _Page4State extends State<Page4> {
                       padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                       child: custom_ElevatedButton(() {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => Page5()));
+                            MaterialPageRoute(builder: (_) =>SignUpVerifyCodeEmail() ));
                       }, 'Sign Up')),
                 ),
               ),

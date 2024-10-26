@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment_ui/page_2.dart';
+import 'package:flutter_assignment_ui/Onboarding_2-Get%20Started.dart';
 import 'package:flutter_assignment_ui/widget.dart';
 
 class Page1 extends StatefulWidget {
