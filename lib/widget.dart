@@ -215,13 +215,4 @@ Widget custombox(
   );
 }
 
-Widget custom_backbutton() {
-  return Container(
-      height: 24,
-      width: 24,
-      child: Image.network(
-        'https://cdn-icons-png.flaticon.com/128/2722/2722991.png',
-        height: 24,
-        fit: BoxFit.cover,
-      ));
-}
+

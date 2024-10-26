@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment_ui/Sign_In.dart';
+import 'package:flutter_assignment_ui/Sign_up.dart';
 import 'package:flutter_assignment_ui/widget.dart';
 import 'package:pinput/pinput.dart';
 
@@ -10,25 +12,28 @@ class SignUpVerifyCodeEmail extends StatefulWidget {
 }
 
 class _SignUpVerifyCodeEmailState extends State<SignUpVerifyCodeEmail> {
-  final FocusNode _focusNode = FocusNode(); // FocusNode ডিফাইন করা হয়েছে
-
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      FocusScope.of(context).requestFocus(_focusNode); // ফোকাস অনুরোধ করা হয়েছে
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFFFFFFF),
         leading: Padding(
-          padding: const EdgeInsets.all(13.0),
-          child: custom_backbutton(),
-        ),
+            padding: const EdgeInsets.all(13.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => Page4()));
+              },
+              child: Container(
+                  height: 24,
+                  width: 24,
+                  child: Image.network(
+                    'https://cdn-icons-png.flaticon.com/128/2722/2722991.png',
+                    height: 24,
+                    fit: BoxFit.cover,
+                  )),
+            )),
       ),
       body: Container(
         color: Color(0xFFFFFFFF),
@@ -45,15 +50,16 @@ class _SignUpVerifyCodeEmailState extends State<SignUpVerifyCodeEmail> {
                 children: [
                   text('Verify Code', 24, FontWeight.w700, 0xFF1D1E25),
                   SizedBox(height: 5),
-                  text('Please enter the code we just sent to email ', 16, FontWeight.w400, 0xFF808D9E),
+                  text('Please enter the code we just sent to email ', 16,
+                      FontWeight.w400, 0xFF808D9E),
                   text('timsmxxx@email.com', 16, FontWeight.w400, 0xFF1D1E25),
                 ],
               ),
             ),
             SizedBox(height: 40),
+            // verafy from
             Center(
               child: Pinput(
-                focusNode: _focusNode, 
                 length: 4,
                 autofocus: true,
                 defaultPinTheme: PinTheme(
@@ -79,7 +85,6 @@ class _SignUpVerifyCodeEmailState extends State<SignUpVerifyCodeEmail> {
                     borderRadius: BorderRadius.circular(30),
                     border: Border.all(color: Colors.blueAccent, width: 2),
                   ),
-                
                 ),
               ),
             ),

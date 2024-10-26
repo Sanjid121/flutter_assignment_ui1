@@ -86,15 +86,21 @@ class _Page4State extends State<Page4> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 60, left: 20),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => Page3()));
-                  },
-                  child: custom_backbutton(),
-                ),
-              ),
+                  padding: const EdgeInsets.only(top: 60, left: 20),
+                  child: InkWell(
+                    onTap: () {
+                        Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => Page3()));
+                    },
+                    child: Container(
+                        height: 24,
+                        width: 24,
+                        child: Image.network(
+                          'https://cdn-icons-png.flaticon.com/128/2722/2722991.png',
+                          height: 24,
+                          fit: BoxFit.cover,
+                        )),
+                  )),
               SizedBox(
                 height: 20,
               ),
@@ -174,13 +180,17 @@ class _Page4State extends State<Page4> {
                 padding: const EdgeInsets.only(left: 20, right: 20),
                 child: Container(
                     child: custom_text_from(
-                        'Type your password', Icons.lock_outline_rounded,
-                        ctr: passCtr,  oneChangefn: (value){
-                  _validateInput(value);
-                  setState(() {
-                    passText = value;
-                  });
-                }, sd: Icon(Icons.visibility_off),)),
+                  'Type your password',
+                  Icons.lock_outline_rounded,
+                  ctr: passCtr,
+                  oneChangefn: (value) {
+                    _validateInput(value);
+                    setState(() {
+                      passText = value;
+                    });
+                  },
+                  sd: Icon(Icons.visibility_off),
+                )),
               ),
               SizedBox(
                 height: 10,
@@ -246,8 +256,10 @@ class _Page4State extends State<Page4> {
                   child: Padding(
                       padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                       child: custom_ElevatedButton(() {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) =>SignUpVerifyCodeEmail() ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => SignUpVerifyCodeEmail()));
                       }, 'Sign Up')),
                 ),
               ),
