@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment_ui/widget.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:pinput/pinput.dart';
 
 class Page5 extends StatefulWidget {
   const Page5({Key? key}) : super(key: key);
@@ -10,6 +11,40 @@ class Page5 extends StatefulWidget {
 }
 
 class _Page5State extends State<Page5> {
+  final defaultPinTheme = PinTheme(
+    width: 56,
+    height: 60,
+    decoration: BoxDecoration(
+      color: Colors.green,
+      borderRadius: BorderRadius.circular(8),
+      border: Border.all(color: Colors.transparent),
+    ),
+  );
+
+  customSheet(BuildContext context) {
+    return showModalBottomSheet(
+        isScrollControlled: true,
+        elevation: 15,
+        context: context,
+        builder: (context) {
+          return Container(
+              height: 600,
+              width: double.maxFinite,
+              child: Column(
+                children: [
+                  Text('Varification'),
+                  Pinput(
+                    defaultPinTheme: defaultPinTheme,
+                    onCompleted: (pin) => print(pin),
+                    onChanged: (value) {
+                      print(value);
+                    },
+                  )
+                ],
+              ));
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,12 +80,17 @@ class _Page5State extends State<Page5> {
                       SizedBox(
                         width: 15,
                       ),
-                      Container(
-                        height: 32,
-                        width: 32,
-                        child: CircleAvatar(
-                          radius: 100,
-                          backgroundImage: AssetImage("assets/sanjid6.png"),
+                      InkWell(
+                        onTap: () {
+                          customSheet(context);
+                        },
+                        child: Container(
+                          height: 32,
+                          width: 32,
+                          child: CircleAvatar(
+                            radius: 100,
+                            backgroundImage: AssetImage("assets/sanjid6.png"),
+                          ),
                         ),
                       )
                     ],
@@ -489,7 +529,6 @@ class _Page5State extends State<Page5> {
               'https://cdn-icons-png.flaticon.com/128/1370/1370907.png',
               height: 20,
               width: 20,
-            
             ),
             SizedBox(
               width: 45,

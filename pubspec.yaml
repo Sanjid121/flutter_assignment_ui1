@@ -36,8 +36,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons:
   flutter_native_splash: ^2.4.1
+<<<<<<< HEAD
   percent_indicator:
   pinput: ^5.0.0
+=======
+  percent_indicator: 
+  pinput:  
+>>>>>>> 4741a92f82ea33974859cb377878a9ddc287adde
   # google_fonts: 
   
 # 
