@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment_ui/Sign_In.dart';
 import 'package:flutter_assignment_ui/Sign_up.dart';
 import 'package:flutter_assignment_ui/widget.dart';
 import 'package:pinput/pinput.dart';
